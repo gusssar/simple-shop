@@ -1,9 +1,12 @@
 
 .sidebar{
-    min-width: 100px;
-    max-width: 300px;
+    /* min-width: 100px; */
+    /* max-width: 400px; */
+    width: 400px;
+    height: 100%;
     color: black;
     background:#aaa887;
+    padding: 10px;
 }
 
 .sidebar__title{
@@ -20,4 +23,18 @@
     padding: 3px;
     padding-left: 10px;
     vertical-align: middle;
+}
+
+.sidebar p{
+    font-size: 14px;
+    margin: 0;
+    padding: 5px;
+    cursor: pointer;
+}
+.sidebar p:hover{
+    background: rgb(160, 160, 160);
+}
+
+.selected{
+    background: rgb(121, 115, 115);
 }

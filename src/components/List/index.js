@@ -16,7 +16,7 @@ export class List extends React.Component{
         let _filter = (isInit)?null:data.fromServ[0].filter((el)=> +el.rid === +filterById);
 
         const item = (isInit)?
-        <p>Загрузка...</p>:(filterById)?
+        <p>Загрузка...</p>:(filterById&& +filterById!==1)?
             _filter.map((el,i)=>
             <div className='list__content' key={i}>
                 <h1>{el.rname}</h1>

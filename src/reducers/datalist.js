@@ -11,7 +11,7 @@ export const initialState = {
     fromServ : [],
     isFetching: false,
     isInit: true,
-    filterById:0,
+    filterById:1,
     product:{},
 }
 

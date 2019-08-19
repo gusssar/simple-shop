@@ -36,6 +36,7 @@ class App extends React.Component{
             isInit={isInit}
             data={data}
             FilterById={FilterByIdAction}
+            filterById={filterById}
             />
           <List 
             isInit={isInit}

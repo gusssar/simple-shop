@@ -5,24 +5,28 @@ import './index.css';
 
 
 export class SideBarFilter extends React.Component{
-    onTitleClick = (rid) => {
+    onTitleClick = (elem, rid) => {
         this.props.FilterById(+rid);
     }
 
     render(){
 
-        const { isInit, data } = this.props;
+        const { isInit, data, filterById } = this.props;
 
         const title = (isInit)?
         <p>Загрузка...</p>:
             data.fromServ[0].map((el,i)=>
-                <p className='sidebar__content' key={i} onClick={()=> this.onTitleClick(el.rid)}>{el.rname}</p>
+                <p className={(+el.rid===filterById)?"selected":""}
+                    key={i} 
+                    onClick={(elem)=> this.onTitleClick(elem, el.rid)}
+                    >{el.rname}</p>
             );
 
         return(
             <div className='sidebar'>
                 <div className='sidebar__title'>Список разделов</div>
-                <p onClick={()=> this.onTitleClick(0)}>Весь список</p>
+                <p className={(filterById===1)?"selected":""}
+                onClick={(elem)=> this.onTitleClick(elem, 1)}>Весь список</p>
                 {title}
             </div>
         )
@@ -33,5 +37,5 @@ SideBarFilter.propTypes = {
     isInit: PropTypes.bool.isRequired,
     data: PropTypes.object.isRequired,
     FilterById: PropTypes.func.isRequired,
-
+    filterById: PropTypes.number.isRequired,
 }
