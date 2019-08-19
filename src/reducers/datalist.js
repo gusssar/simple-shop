@@ -11,6 +11,8 @@ export const initialState = {
     isFetching: false,
     isInit: true,
     filterById:0,
+    count:0,
+    amount:0,
 }
 
 //обновление state редьюсером в зависимости от экшена

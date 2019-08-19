@@ -8,6 +8,7 @@ import { SideBarFilter } from '../components/SideBar/index';
 import { NeedGetRequest, FilterById } from '../actions/DataListActions'
 
 import './App.css';
+import { Footer } from '../components/Footer';
 
 class App extends React.Component{
 
@@ -22,6 +23,8 @@ class App extends React.Component{
       NextPageAction,
       filterById,
       FilterByIdAction,
+      count,
+      amount,
     } = this.props;
  
     return(
@@ -44,6 +47,10 @@ class App extends React.Component{
             filterById={filterById}
             />
           </div>
+          <Footer
+            count={count}
+            amount = {amount}
+            />
       </div>
     )
   }
@@ -54,6 +61,8 @@ const mapStateToProps = store => {
     data: store.data,
     isInit: store.data.isInit,
     filterById: store.data.filterById,
+    count: store.data.count,
+    amount: store.data.amount,
   }
 }
 
