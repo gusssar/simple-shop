@@ -14,6 +14,7 @@ export function GetRequest(){
 
 export function SndReqest(obj){
     let formData = new FormData();
+    /* eslint-disable no-unused-vars*/
     for (let key in obj){
         if(obj[key]){
             formData.append('product['+key+']', obj[key])

@@ -17,7 +17,6 @@ export function NeedGetRequest(i,n){
             let _arr=GetRequest();
             //ждём подгрузки данных 1 секунду
             setTimeout(()=>{
-                console.log(_arr);
                 dispatch({
                     type: REQUEST_SUCCESS,
                     playload: _arr,

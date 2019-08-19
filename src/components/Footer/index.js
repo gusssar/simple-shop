@@ -13,6 +13,7 @@ export class Footer extends React.Component{
         let amount=0;
         let objReq={};
 
+        /* eslint-disable no-unused-vars*/
         for(let key in amountItem){
             count+= +amountItem[key].value;
             amount+= +amountItem[key].amount;
@@ -20,14 +21,13 @@ export class Footer extends React.Component{
         }
 
         function onBtnClick(){
-            console.log(objReq);
             SndReqest(objReq);
         }
 
         return(
             <div className='footer'>
                 <div className='footer__count'>Количество товаров в корзине: {count} на сумму {amount} руб.</div>
-                <button onClick={onBtnClick}>В корзину</button>
+                <div className='footer__cart' onClick={onBtnClick}></div>
             </div>
         )
     }

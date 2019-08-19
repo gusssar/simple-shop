@@ -11,7 +11,6 @@ export class Item extends React.Component{
             gid:gid,
             amount:(value)?gprice*value:0,
         };
-        console.log(obj);
         this.props.ChangeCount(obj);
     }
 
@@ -51,7 +50,7 @@ export class Item extends React.Component{
 }
 
 Item.propTypes = {
-    item: PropTypes.array.isRequired,
+    item: PropTypes.object.isRequired,
     isInit:PropTypes.bool.isRequired,
     ChangeCount: PropTypes.func.isRequired,
     amountItem: PropTypes.object.isRequired,

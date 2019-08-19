@@ -28,7 +28,6 @@ class App extends React.Component{
       SndReqestAction,
     } = this.props;
  
-    console.log('app',amountItem)
     return(
       <div className='app'>
           <Header Load={LoadAllListAction} />
