@@ -5,7 +5,7 @@ import { Header } from '../components/Header/index';
 import { List } from '../components/List/index';
 import { SideBarFilter } from '../components/SideBar/index';
 
-import { NeedGetRequest, FilterById, ChangeCount } from '../actions/DataListActions'
+import { NeedGetRequest, FilterById, ChangeCount, NeedSndReqest } from '../actions/DataListActions'
 
 import './App.css';
 import { Footer } from '../components/Footer';
@@ -23,10 +23,9 @@ class App extends React.Component{
       NextPageAction,
       filterById,
       FilterByIdAction,
-      count,
-      amount,
       amountItem,
       ChangeCountAction,
+      SndReqestAction,
     } = this.props;
  
     console.log('app',amountItem)
@@ -53,8 +52,8 @@ class App extends React.Component{
             />
           </div>
           <Footer
-            count={count}
-            amount = {amount}
+            amountItem={amountItem}
+            SndReqest={SndReqestAction}
             />
       </div>
     )
@@ -66,8 +65,6 @@ const mapStateToProps = store => {
     data: store.data,
     isInit: store.data.isInit,
     filterById: store.data.filterById,
-    count: store.data.count,
-    amount: store.data.amount,
     amountItem: store.data.product,
   }
 }
@@ -77,6 +74,7 @@ const mapDispatchToProps = dispatch => {
     LoadAllListAction: (start, end) => dispatch(NeedGetRequest(start, end)),
     FilterByIdAction: (id) => dispatch(FilterById(id)),
     ChangeCountAction: (obj) => dispatch(ChangeCount(obj)),
+    SndReqestAction: (obj) => dispatch(NeedSndReqest(obj)),
   }
 }
 

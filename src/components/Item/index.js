@@ -19,12 +19,6 @@ export class Item extends React.Component{
         const { isInit, item, amountItem } = this.props;
         //вся инфа что пришла
 
-        // console.log(amountItem)
-        // const amount = function(_gid){
-        //     console.log();
-        //     return (amountItem._gid)?amountItem._gid.amount:'0'
-        // }
-
         const elem = (isInit)?
         null:
             item.goods.map((el,i)=>
@@ -36,7 +30,9 @@ export class Item extends React.Component{
                             <td className='table__price item__price'>{el.gprice}</td>
                             <td className='table__count item__count'>
                                 <input type='number' onChange={(event)=> 
-                                     this.onChangeCount(event.currentTarget.value, el.gid, el.gprice)}/>
+                                     this.onChangeCount(event.currentTarget.value, el.gid, el.gprice)}
+                                     value={(amountItem[el.gid])?amountItem[el.gid].value:''}
+                                     />
                                 </td>
                             <td className='table__amount item__amount'>{(amountItem[el.gid])?amountItem[el.gid].amount:'0'}</td>
                         </tr>

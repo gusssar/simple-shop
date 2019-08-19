@@ -2,8 +2,8 @@ import {
     FILTER_BY_ID,
     SEND_REQUEST,
     REQUEST_SUCCESS,
-    // RETRY_REQUEST,
     CHANGE_COUNT,
+    SEND_BUCKET,
 } from '../actions/DataListActions';
 
 //инициализируем начальное состояние
@@ -12,8 +12,6 @@ export const initialState = {
     isFetching: false,
     isInit: true,
     filterById:0,
-    // count:0,
-    // amount:0,
     product:{},
 }
 
@@ -35,6 +33,8 @@ export function dataListReducer(state = initialState, action){
                 };
                 return {...state, product: {...state.product, ..._gid}
                 }
+        case SEND_BUCKET:
+            return {...state, product:{}}
         default:
             return state
     }
