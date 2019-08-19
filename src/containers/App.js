@@ -5,7 +5,7 @@ import { Header } from '../components/Header/index';
 import { List } from '../components/List/index';
 import { SideBarFilter } from '../components/SideBar/index';
 
-import { NeedGetRequest, FilterById } from '../actions/DataListActions'
+import { NeedGetRequest, FilterById, ChangeCount } from '../actions/DataListActions'
 
 import './App.css';
 import { Footer } from '../components/Footer';
@@ -25,6 +25,7 @@ class App extends React.Component{
       FilterByIdAction,
       count,
       amount,
+      ChangeCountAction,
     } = this.props;
  
     return(
@@ -45,6 +46,7 @@ class App extends React.Component{
             LoadAllList={LoadAllListAction}
             NextPage={NextPageAction}
             filterById={filterById}
+            ChangeCount={ChangeCountAction}
             />
           </div>
           <Footer
@@ -70,6 +72,7 @@ const mapDispatchToProps = dispatch => {
   return{
     LoadAllListAction: (start, end) => dispatch(NeedGetRequest(start, end)),
     FilterByIdAction: (id) => dispatch(FilterById(id)),
+    ChangeCountAction: (obj) => dispatch(ChangeCount(obj)),
   }
 }
 

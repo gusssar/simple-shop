@@ -5,6 +5,7 @@ export const FILTER_BY_ID = 'FILTER_BY_ID';
 export const SEND_REQUEST = 'SEND_REQUEST';
 export const REQUEST_SUCCESS = 'REQUEST_SUCCESS';
 export const RETRY_REQUEST = 'RETRY_REQUEST';
+export const CHANGE_COUNT = 'CHANGE_COUNT';
 
 export function NeedGetRequest(i,n){
     return dispatch => {
@@ -29,6 +30,15 @@ export function FilterById(id){
         dispatch({
             type:FILTER_BY_ID,
             playload: id,
+        })
+    }
+}
+
+export function ChangeCount(obj){
+    return dispatch => {
+        dispatch({
+            type: CHANGE_COUNT,
+            playload: obj,
         })
     }
 }
