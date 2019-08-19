@@ -1,0 +1,12 @@
+.app {
+  color: aliceblue;
+  min-height: 100vh;
+  background-color: #282c34;
+}
+
+.app__content{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  margin-top: 15px;
+}

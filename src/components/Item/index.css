@@ -1,0 +1,19 @@
+.item{
+    margin-bottom: 10px;
+}
+
+.item__image{
+    width: 220px;
+    height: 300px;
+}
+
+.item__name{
+    text-align: center;
+    padding: 5px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.item__table{
+    width: 100%;
+}

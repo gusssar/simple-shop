@@ -1,68 +1,64 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Простой магазин
+---
 
-## Available Scripts
+Проект представляет собой реализацию простого магазина. Проект реализован с помощью библиотек React и Redux. 
 
-In the project directory, you can run:
+### Имеет следующие функции:
+- получение списка c удалённого сервера
+- отображение содержимого полученной информации
+- фильтрация списка
+- поиск по наименованию
+- логирование действий
 
-### `npm start`
+### Структура проекта
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+```
++ seperheroes
+| + public // не тронут с create-react-app
+| + src
+| | + actions // экшены для сущностей работы с вводом, обработкой данных и выдачей в лист
+| | | - DataListActions.js
+| | | - InputActions.js
+| | | - ListActions.js
+| | + components // отображаемые компоненты
+| | | + Header
+| | | | - index.js
+| | | | - index.css
+| | | + Input
+| | | | - index.js
+| | | | - index.css
+| | | + Item
+| | | | - index.js
+| | | | - index.css
+| | | + SideBar
+| | | | - index.js
+| | | | - index.css
+| | + containers // контейнер управления приложением
+| | | - App.js
+| | | - App.css
+| | + redusers // редьюсеры приложения (корневой + для каждого экшена)
+| | | - index.js
+| | | - datalist.js
+| | | - input.js
+| | | - list.js
+| | + store // конф файл стора
+| | | - confStore.js
+| | + utils // функция запроса API
+| | | - getReq.js
+| | - index.css
+| | - index.js
+| | - serviseWorker.js // не тронут с create-react-app
+- .gitignore
+- package-lock.json
+- package.json
+- README.md
+```
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+## Начало работы
+Для **первого запуска** необходимо установить зависимоти (`/node_modules`) прописанные в `package.json`<br>
+Для этого необходимо в терминале, находясь в корне приложения, ввести `npm instal`
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+## Запуск приложения
+Находясь в корне проекта в консоле необходимо запустить:
+#### `npm run start`
+эта команда атоматически запустит приложение в режиме разработки и откроет его в [http://localhost:3000](http://localhost:3000)<br>

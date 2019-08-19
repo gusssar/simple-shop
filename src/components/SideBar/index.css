@@ -1,0 +1,23 @@
+
+.sidebar{
+    min-width: 100px;
+    max-width: 300px;
+    color: black;
+    background:#aaa887;
+}
+
+.sidebar__title{
+    padding: 15px;
+}
+
+.sidebar__alignment{
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar__alignment div{
+    padding: 3px;
+    padding-left: 10px;
+    vertical-align: middle;
+}
