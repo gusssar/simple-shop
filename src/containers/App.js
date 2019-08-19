@@ -14,16 +14,13 @@ class App extends React.Component{
 
   render(){
     const { 
-      isInit,
       data, 
-      value,
-      viewLine,
-      filter,
-      LoadAllListAction,
-      NextPageAction,
+      isInit,
       filterById,
-      FilterByIdAction,
       amountItem,
+
+      LoadAllListAction,
+      FilterByIdAction,
       ChangeCountAction,
       SndReqestAction,
     } = this.props;
@@ -32,24 +29,20 @@ class App extends React.Component{
       <div className='app'>
           <Header Load={LoadAllListAction} />
           <div className='app__content'>
-          <SideBarFilter 
-            isInit={isInit}
-            data={data}
-            FilterById={FilterByIdAction}
-            filterById={filterById}
-            />
-          <List 
-            isInit={isInit}
-            data={data}
-            value={value}
-            keyCheck = {filter}
-            viewLine={viewLine}
-            LoadAllList={LoadAllListAction}
-            NextPage={NextPageAction}
-            filterById={filterById}
-            ChangeCount={ChangeCountAction}
-            amountItem={amountItem}
-            />
+            <SideBarFilter 
+              isInit={isInit}
+              data={data}
+              FilterById={FilterByIdAction}
+              filterById={filterById}
+              />
+            <List 
+              isInit={isInit}
+              data={data}
+              LoadAllList={LoadAllListAction}
+              filterById={filterById}
+              ChangeCount={ChangeCountAction}
+              amountItem={amountItem}
+              />
           </div>
           <Footer
             amountItem={amountItem}
@@ -71,7 +64,7 @@ const mapStateToProps = store => {
 
 const mapDispatchToProps = dispatch => {
   return{
-    LoadAllListAction: (start, end) => dispatch(NeedGetRequest(start, end)),
+    LoadAllListAction: () => dispatch(NeedGetRequest()),
     FilterByIdAction: (id) => dispatch(FilterById(id)),
     ChangeCountAction: (obj) => dispatch(ChangeCount(obj)),
     SndReqestAction: (obj) => dispatch(NeedSndReqest(obj)),

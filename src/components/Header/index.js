@@ -13,7 +13,6 @@ export class Header extends React.Component{
         return(
             <div className='header'>
                 <h1>Магазин "Simple"</h1>
-                <p>created with love</p>
             </div>
         )
     }

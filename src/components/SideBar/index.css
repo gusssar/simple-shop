@@ -1,11 +1,9 @@
 
 .sidebar{
-    /* min-width: 100px; */
-    /* max-width: 400px; */
     width: 400px;
     height: 100%;
     color: black;
-    background:#aaa887;
+    background:#92a792;
     padding: 10px;
 }
 

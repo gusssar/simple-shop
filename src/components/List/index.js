@@ -7,11 +7,7 @@ import './index.css';
 export class List extends React.Component{
 
     render(){
-        //принимаем пропс объекта
         const { data, isInit, filterById, ChangeCount, amountItem } = this.props;
-
-        // //если это первый инит ставим спинер
-        // //иначе разбираем массив из стора
         
         let _filter = (isInit)?null:data.fromServ[0].filter((el)=> +el.rid === +filterById);
 
@@ -61,10 +57,8 @@ export class List extends React.Component{
 }
 
 List.propTypes = {
-    viewLine: PropTypes.number,
     data: PropTypes.object.isRequired,
     isInit:PropTypes.bool.isRequired,
-    LoadAllList: PropTypes.func.isRequired,
     filterById: PropTypes.number.isRequired,
     ChangeCount: PropTypes.func.isRequired,
     amountItem: PropTypes.object.isRequired,

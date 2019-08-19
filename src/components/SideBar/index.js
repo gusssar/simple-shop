@@ -5,7 +5,7 @@ import './index.css';
 
 
 export class SideBarFilter extends React.Component{
-    onTitleClick = (elem, rid) => {
+    onTitleClick = (rid) => {
         this.props.FilterById(+rid);
     }
 
@@ -18,7 +18,7 @@ export class SideBarFilter extends React.Component{
             data.fromServ[0].map((el,i)=>
                 <p className={(+el.rid===filterById)?"selected":""}
                     key={i} 
-                    onClick={(elem)=> this.onTitleClick(elem, el.rid)}
+                    onClick={()=> this.onTitleClick(el.rid)}
                     >{el.rname}</p>
             );
 
@@ -26,7 +26,7 @@ export class SideBarFilter extends React.Component{
             <div className='sidebar'>
                 <div className='sidebar__title'>Список разделов</div>
                 <p className={(filterById===1)?"selected":""}
-                onClick={(elem)=> this.onTitleClick(elem, 1)}>Весь список</p>
+                onClick={()=> this.onTitleClick(1)}>Весь список</p>
                 {title}
             </div>
         )

@@ -16,7 +16,6 @@ export class Item extends React.Component{
 
     render(){
         const { isInit, item, amountItem } = this.props;
-        //вся инфа что пришла
 
         const elem = (isInit)?
         null:
@@ -31,6 +30,7 @@ export class Item extends React.Component{
                                 <input type='number' onChange={(event)=> 
                                      this.onChangeCount(event.currentTarget.value, el.gid, el.gprice)}
                                      value={(amountItem[el.gid])?amountItem[el.gid].value:''}
+                                     placeholder='0'
                                      />
                                 </td>
                             <td className='table__amount item__amount'>{(amountItem[el.gid])?amountItem[el.gid].amount:'0'}</td>
@@ -38,8 +38,6 @@ export class Item extends React.Component{
                     </tbody>
                 </table>
             );
-
-
 
         return(
             <div className='item'>
