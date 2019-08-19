@@ -25,9 +25,11 @@ class App extends React.Component{
       FilterByIdAction,
       count,
       amount,
+      amountItem,
       ChangeCountAction,
     } = this.props;
  
+    console.log('app',amountItem)
     return(
       <div className='app'>
           <Header Load={LoadAllListAction} />
@@ -47,6 +49,7 @@ class App extends React.Component{
             NextPage={NextPageAction}
             filterById={filterById}
             ChangeCount={ChangeCountAction}
+            amountItem={amountItem}
             />
           </div>
           <Footer
@@ -65,6 +68,7 @@ const mapStateToProps = store => {
     filterById: store.data.filterById,
     count: store.data.count,
     amount: store.data.amount,
+    amountItem: store.data.product,
   }
 }
 

@@ -8,7 +8,7 @@ export class List extends React.Component{
 
     render(){
         //принимаем пропс объекта
-        const { data, isInit, filterById, ChangeCount } = this.props;
+        const { data, isInit, filterById, ChangeCount, amountItem } = this.props;
 
         // //если это первый инит ставим спинер
         // //иначе разбираем массив из стора
@@ -31,7 +31,7 @@ export class List extends React.Component{
                         </tr>
                     </tbody>
                 </table>
-                <Item isInit={isInit} ChangeCount={ChangeCount} item={el}/>
+                <Item isInit={isInit} ChangeCount={ChangeCount} amountItem={amountItem} item={el}/>
             </div>
             )
             :data.fromServ[0].map((el,i)=>
@@ -48,7 +48,7 @@ export class List extends React.Component{
                         </tr>
                     </tbody>
                 </table>
-                <Item isInit={isInit} ChangeCount={ChangeCount} item={el}/>
+                <Item isInit={isInit} ChangeCount={ChangeCount} amountItem={amountItem} item={el}/>
             </div>
             );
         
@@ -67,4 +67,5 @@ List.propTypes = {
     LoadAllList: PropTypes.func.isRequired,
     filterById: PropTypes.number.isRequired,
     ChangeCount: PropTypes.func.isRequired,
+    amountItem: PropTypes.object.isRequired,
 }

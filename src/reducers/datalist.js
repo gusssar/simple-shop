@@ -31,7 +31,7 @@ export function dataListReducer(state = initialState, action){
                 const _gid={};
                 _gid[gid]={
                     value:action.playload.value,
-                    gprice:action.playload.gprice,
+                    amount:action.playload.amount,
                 };
                 return {...state, product: {...state.product, ..._gid}
                 }

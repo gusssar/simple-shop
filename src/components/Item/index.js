@@ -9,17 +9,21 @@ export class Item extends React.Component{
         const obj={
             value:value,
             gid:gid,
-            gprice:gprice,
+            amount:(value)?gprice*value:0,
         };
         console.log(obj);
         this.props.ChangeCount(obj);
     }
 
     render(){
-        const { isInit, item } = this.props;
+        const { isInit, item, amountItem } = this.props;
         //вся инфа что пришла
 
-        
+        // console.log(amountItem)
+        // const amount = function(_gid){
+        //     console.log();
+        //     return (amountItem._gid)?amountItem._gid.amount:'0'
+        // }
 
         const elem = (isInit)?
         null:
@@ -34,7 +38,7 @@ export class Item extends React.Component{
                                 <input type='number' onChange={(event)=> 
                                      this.onChangeCount(event.currentTarget.value, el.gid, el.gprice)}/>
                                 </td>
-                            <td className='table__amount item__amount'>0</td>
+                            <td className='table__amount item__amount'>{(amountItem[el.gid])?amountItem[el.gid].amount:'0'}</td>
                         </tr>
                     </tbody>
                 </table>
@@ -54,4 +58,5 @@ Item.propTypes = {
     item: PropTypes.array.isRequired,
     isInit:PropTypes.bool.isRequired,
     ChangeCount: PropTypes.func.isRequired,
+    amountItem: PropTypes.object.isRequired,
 }
