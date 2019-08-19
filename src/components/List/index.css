@@ -1,9 +1,11 @@
 .list{
     width: 100%;
+    margin: 0 20px;
 }
 
 .list__content__table{
     width: 100%;
+    /* margin: 20px 20px 0; */
 }
 
 
